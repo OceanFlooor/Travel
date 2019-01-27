@@ -5,9 +5,9 @@
         <div class="icon" v-for="item in page" :key="item.id">
           <a href="">
             <div class="icon-img">
-              <img :src="item.iconUrl" alt="">
+              <img :src="item.imgUrl" alt="">
             </div>
-            <p>{{ item.title }}</p>
+            <p>{{ item.desc }}</p>
           </a>
         </div>
       </swiper-slide>
@@ -18,50 +18,14 @@
 <script>
 export default {
   name: 'homeIcons',
+  props: {
+    iconList: Array
+  },
   data () {
     return {
       swiperOption: {
         autoplay: false
-      },
-      iconList: [
-        {
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          id: '000',
-          title: '景点门票'
-        }, {
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-          id: '001',
-          title: '丹霞山'
-        }, {
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-          id: '002',
-          title: '丹霞山'
-        }, {
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-          id: '003',
-          title: '丹霞山'
-        }, {
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-          id: '004',
-          title: '丹霞山'
-        }, {
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-          id: '005',
-          title: '丹霞山'
-        }, {
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-          id: '006',
-          title: '丹霞山'
-        }, {
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-          id: '007',
-          title: '丹霞山'
-        }, {
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-          id: '008',
-          title: '丹霞山'
-        }
-      ]
+      }
     }
   },
   computed: {
