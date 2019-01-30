@@ -1,18 +1,24 @@
 <template>
   <ul class="list">
-    <li>A</li>
-    <li>A</li>
-    <li>A</li>
-    <li>A</li>
-    <li>A</li>
-    <li>A</li>
-    <li>A</li>
+    <li v-for="(item,index) in alpha" :key="index"> {{ item }} </li>
   </ul>
 </template>
 
 <script>
 export default {
-  name: 'cityAlphabet'
+  name: 'cityAlphabet',
+  props: {
+    alphabet: Object
+  },
+  computed: {
+    alpha () {
+      const alpha = []
+      for (const key in this.alphabet) {
+        alpha.push(key)
+      }
+      return alpha
+    }
+  }
 }
 </script>
 

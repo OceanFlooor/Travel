@@ -13,90 +13,15 @@
         <div class="title border">热门城市</div>
         <div class="button-list">
           <div class="wrapper">
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
+            <button v-for=" item in hotCities " :key="item.id"> {{ item.name }} </button>
           </div>
         </div>
       </div>
-      <div class="area">
-        <div class="title border">A</div>
+      <div class="area" v-for=" (value,key,index) in cities" :key="index">
+        <div class="title border"> {{ key }} </div>
         <div class="button-list">
           <div class="wrapper">
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-          </div>
-        </div>
-      </div>
-      <div class="area">
-        <div class="title border">A</div>
-        <div class="button-list">
-          <div class="wrapper">
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-          </div>
-        </div>
-      </div>
-      <div class="area">
-        <div class="title border">A</div>
-        <div class="button-list">
-          <div class="wrapper">
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
-            <button>广州</button>
+            <button v-for=" city in value " :key="city.id"> {{ city.name }} </button>
           </div>
         </div>
       </div>
@@ -108,6 +33,10 @@
 import Bscroll from 'better-scroll'
 export default {
   name: 'CityList',
+  props: {
+    hotCities: Array,
+    cities: Object
+  },
   mounted () {
     this.scroll = new Bscroll(this.$refs.outter)
   }
@@ -143,9 +72,9 @@ export default {
             button
               background #fff
               text-align center
-              width 32%
+              width 31%
               padding .1rem
-              margin .1rem 0
+              margin .1rem .05rem
               border .02rem solid #ccc
               border-radius .06rem
 </style>
