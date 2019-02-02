@@ -13,6 +13,7 @@
         <li
           v-for="(item, index) in list"
           :key="index"
+          @click="handleCityClick(item)"
         >
         {{ item }}
         </li>
@@ -26,6 +27,7 @@
 
 <script>
 import Bscroll from 'better-scroll'
+import { mapActions } from 'vuex'
 export default {
   name: 'citySearch',
   props: {
@@ -38,13 +40,23 @@ export default {
       timer: null
     }
   },
+  methods: {
+    handleCityClick (city) {
+      // this.$store.dispatch('changeCity', city)
+      this.changeCity(city)
+      this.$router.push('/')
+    },
+    ...mapActions(['changeCity'])
+  },
   computed: {
     hasNoData () {
       return !this.list.length
     }
   },
   mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+    this.scroll = new Bscroll(this.$refs.wrapper, {
+      click: true
+    })
   },
   watch: {
     keyword () {
