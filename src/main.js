@@ -11,6 +11,7 @@ import 'sty/reset.css'
 import 'sty/border.css'
 import 'sty/iconfont.css'
 import 'swiper/dist/css/swiper.css'
+import 'animate.css/animate.min.css'
 
 Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)

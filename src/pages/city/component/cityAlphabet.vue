@@ -5,7 +5,7 @@
       :key="index"
       :ref="item"
       @click="changeLetterHandle"
-      @touchstart="touchStart"
+      @touchstart.prevent="touchStart"
       @touchmove="touchMove"
       @touchend="touchEnd"
       > {{ item }}

@@ -10,19 +10,23 @@
         </div>
       </div>
     </div>
-    <common-gallery
-      v-show="galleryShow"
-      @handleHideGallery="closeGallery"
-    ></common-gallery>
+    <animation-intro>
+      <common-gallery
+        v-show="galleryShow"
+        @handleHideGallery="closeGallery"
+      ></common-gallery>
+    </animation-intro>
   </div>
 </template>
 
 <script>
 import commonGallery from 'common/gallery/gallery'
+import animationIntro from 'common/animation/animationIntro'
 export default {
   name: 'detailBanner',
   components: {
-    commonGallery
+    commonGallery,
+    animationIntro
   },
   data () {
     return {
